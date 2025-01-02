@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 
 interface HeaderProps {
   isNavVisible: boolean;
@@ -21,6 +23,7 @@ const Header: React.FC<HeaderProps> = ({ isNavVisible, toggleNav, darkMode, togg
           aria-expanded={isNavVisible}
           onClick={toggleNav}
         >
+
         </button>
 
         <ul
