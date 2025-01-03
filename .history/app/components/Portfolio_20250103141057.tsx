@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLaptopCode, faAngleDoubleRight, faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
-import supabase from '../utils/supabaseClient';  // Adjust path if in 'utils'
+import supabase from '../utils/supabaseClient'; // Adjust path if necessary
 import Image from 'next/image'; // Import Image from Next.js
 
 type Project = {
@@ -22,28 +22,26 @@ function Portfolio() {
   useEffect(() => {
     const fetchProjects = async () => {
       const { data, error } = await supabase
-        .from('portfolio')  // Table name is 'portfolio'
+        .from('portfolio') // Table name is 'portfolio'
         .select('*')
         .order('id', { ascending: true }); // Fetch data in ascending order by 'id'
 
       if (error) {
         console.error('Error fetching projects:', error);
       } else {
-        // Sort the projects manually to match your custom order
-        const customOrder = [5, 4, 3, 2, 1, 6, 7, 8, 9, 10, 11, 12]; // Custom order for IDs
-        const sortedProjects = customOrder.map(id => data?.find(project => project.id === id)).filter(Boolean) as Project[];
-
+        // Custom sort
+        const customOrder = [5, 4, 3, 2, 1, 6, 7, 8, 9, 10, 11, 12];
+        const sortedProjects = customOrder
+          .map((id) => data?.find((project) => project.id === id))
+          .filter(Boolean) as Project[];
         setProjects(sortedProjects);
       }
     };
 
     fetchProjects();
-  }, [supabase]);
+  }, []);
 
-  // Calculate total pages
   const totalPages = Math.ceil(projects.length / projectsPerPage);
-
-  // Calculate current projects to display
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
   const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
@@ -69,18 +67,19 @@ function Portfolio() {
         <div className="portfolio-card">
           <div className="portfolio-content">
             <h2>Portfolio</h2>
-            {/* Project Container */}
             <div className="project-container">
               {currentProjects.map((project) => (
                 <section className="project-card" key={project.id}>
-                  <Image
-                    className="project-img"
-                    src={project.image_path}
-                    alt={project.title}
-                    loading="lazy" // Enable lazy loading
-                    //width={auto}
-                    //height={auto}
-                  />
+                  <div style={{ position: 'relative', width: '100%', height: '15%' }}>
+                    <Image
+                      className="project-img"
+                      src={project.image_path}
+                      alt={project.title}
+                      layout="fill" // Ensures the image fills the container
+                      objectFit="cover" // Controls image scaling
+                      loading="lazy" // Enable lazy loading
+                    />
+                  </div>
                   <h3>{project.title}</h3>
                   <h5>Project Description</h5>
                   <p>{project.description}</p>
@@ -89,7 +88,6 @@ function Portfolio() {
                       <FontAwesomeIcon icon={faGithub} className="project-icons" />
                       Repository
                     </a>
-                    {/* Only show Live Demo if the link exists */}
                     {project.live_demo_link && project.live_demo_link !== '' && (
                       <a href={project.live_demo_link} className="project-link">
                         <FontAwesomeIcon icon={faLaptopCode} className="project-icons" />
@@ -100,9 +98,7 @@ function Portfolio() {
                 </section>
               ))}
             </div>
-            {/* End of Project Container */}
 
-            {/* Pagination Controls */}
             <div className="pagination">
               <a
                 href="#!"

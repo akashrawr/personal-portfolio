@@ -78,8 +78,8 @@ function Portfolio() {
                     src={project.image_path}
                     alt={project.title}
                     loading="lazy" // Enable lazy loading
-                    //width={auto}
-                    //height={auto}
+                    width={480}
+                    height={300}
                   />
                   <h3>{project.title}</h3>
                   <h5>Project Description</h5>
