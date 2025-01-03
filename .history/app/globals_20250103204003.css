@@ -312,16 +312,17 @@ color:white;
   }
   .hero-text-container {
     text-align: left;
+    background-color:#ccc;
   }
 
 
 }
 .hero-text-container > h2 {
-  font-size: 30px;
+  font-size: 28px;
   color: var(--accent-1);
 }
 .hero-text-container > p {
-  font-size: 15px;
+  font-size: 12px;
 }
 .project-card > h3 {
   font-size: 12px;

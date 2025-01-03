@@ -302,6 +302,11 @@ color:white;
 @media screen and (max-width: 768px) {
   .hero-main-container {
     flex-direction: column;
+    background-color:#ccc;
+    padding: 0;
+    width: 100%;
+    gap: 0;
+    margin: 0 auto; /* Optional: Center the container */
   }
   .hero-img {
     margin-top: 20px;
@@ -310,18 +315,23 @@ color:white;
     max-width: 85%;
     height: auto;
   }
-  .hero-text-container {
+  .hero-container {
     text-align: left;
+    background-color:#ccc;
+    padding: 0;
+    width: 100%;
+    gap: 0;
+    margin: 0 auto;
   }
 
 
 }
 .hero-text-container > h2 {
-  font-size: 30px;
+  font-size: 28px;
   color: var(--accent-1);
 }
 .hero-text-container > p {
-  font-size: 15px;
+  font-size: 12px;
 }
 .project-card > h3 {
   font-size: 12px;

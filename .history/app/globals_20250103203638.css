@@ -307,21 +307,22 @@ color:white;
     margin-top: 20px;
   }
   .hero-container, .hero-image {
-    max-width: 85%;
+    max-width: 80%;
     height: auto;
   }
   .hero-text-container {
     text-align: left;
+    max-width: 100%;
   }
 
 
 }
 .hero-text-container > h2 {
-  font-size: 30px;
+  font-size: 20px;
   color: var(--accent-1);
 }
 .hero-text-container > p {
-  font-size: 15px;
+  font-size: 14px;
 }
 .project-card > h3 {
   font-size: 12px;

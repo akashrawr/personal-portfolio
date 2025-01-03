@@ -307,6 +307,10 @@ color:white;
     margin-top: 20px;
   }
   .hero-container, .hero-image {
+    max-width: 75%;
+    height: auto;
+  }
+  .hero-container{
     max-width: 85%;
     height: auto;
   }
@@ -321,7 +325,7 @@ color:white;
   color: var(--accent-1);
 }
 .hero-text-container > p {
-  font-size: 15px;
+  font-size: 16px;
 }
 .project-card > h3 {
   font-size: 12px;
