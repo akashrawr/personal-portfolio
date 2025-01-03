@@ -37,7 +37,6 @@ const Header: React.FC<HeaderProps> = ({ isNavVisible, toggleNav, darkMode, togg
           <li>
             <a className="nav-link" href="#contact" onClick={toggleNav}>Contact</a>
           </li>
-          {/*
           <li>
              <button
               className="user-login-button"
@@ -58,7 +57,6 @@ const Header: React.FC<HeaderProps> = ({ isNavVisible, toggleNav, darkMode, togg
               </svg>
             </button>
           </li>
-          */}
           <li>
             <label className="switch" aria-label="Toggle dark mode">
               <input
