@@ -70,7 +70,7 @@ function Portfolio() {
             <div className="project-container">
               {currentProjects.map((project) => (
                 <section className="project-card" key={project.id}>
-                  <div style={{ position: 'relative', width: '480px', height: '300px' }}>
+                  <div style={{ position: 'relative', width: '640px', height: '360px' }}>
                     <Image
                       className="project-img"
                       src={project.image_path}
