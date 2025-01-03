@@ -30,7 +30,7 @@ function Portfolio() {
         console.error('Error fetching projects:', error);
       } else {
         // Sort the projects manually to match your custom order
-        const customOrder = [5, 4, 3, 2, 6, 7, 8, 9, 10, 11, 12, 1]; // Custom order for IDs
+        const customOrder = [5, 4, 3, 2, 6, 7, 8, 9, 10, 11, 12]; // Custom order for IDs
         const sortedProjects = customOrder.map(id => data?.find(project => project.id === id)).filter(Boolean) as Project[];
 
         setProjects(sortedProjects);
