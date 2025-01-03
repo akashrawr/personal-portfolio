@@ -320,9 +320,6 @@ color:white;
   font-size: 30px;
   color: var(--accent-1);
 }
-.hero-text-container > p {
-  font-size: 16px;
-}
 .project-card > h3 {
   font-size: 12px;
   color: var(--secondary-color);

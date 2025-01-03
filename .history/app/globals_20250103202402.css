@@ -317,11 +317,8 @@ color:white;
 
 }
 .hero-text-container > h2 {
-  font-size: 30px;
+  font-size: 20px;
   color: var(--accent-1);
-}
-.hero-text-container > p {
-  font-size: 16px;
 }
 .project-card > h3 {
   font-size: 12px;

@@ -306,7 +306,7 @@ color:white;
   .hero-img {
     margin-top: 20px;
   }
-  .hero-container, .hero-image {
+  .hero-image {
     max-width: 75%;
     height: auto;
   }
@@ -314,14 +314,14 @@ color:white;
     text-align: left;
   }
 
-
+  .hero-container {
+    max-width: 75%;
+    height: auto;
+  }
 }
 .hero-text-container > h2 {
-  font-size: 30px;
+  font-size: 20px;
   color: var(--accent-1);
-}
-.hero-text-container > p {
-  font-size: 16px;
 }
 .project-card > h3 {
   font-size: 12px;
